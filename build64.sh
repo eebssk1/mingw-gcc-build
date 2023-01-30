@@ -7,6 +7,11 @@ checkreturn(){
 }
 
 export CC=gcc-12
+export CXX=g++-12
+if [ "x$(which ccache)" != "x" ]; then
+export CC="ccache gcc-12"
+export CXX="ccache g++-12"
+fi
 
 export SDIR=$PWD
 
