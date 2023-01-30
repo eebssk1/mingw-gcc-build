@@ -25,7 +25,7 @@ echo "UC: $(git rev-parse --short HEAD)" >> rev
 
 date "+%Y-%m-%d_%H:%M:%S_%z" >> rev
 
-od -x /dev/random | head -1 | awk '{print $2$3}' > tag
+uuidgen -r |cut -d '-' -f 1 > tag
 
 mkdir m_gcc/build
 mkdir m_binutils/build
