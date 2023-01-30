@@ -8,6 +8,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v1
+      - name: enable ccache
+        uses: hendrikmuhs/ccache-action@v1.2.8
+        with:
+          verbose: 1
+          max-size: "760M"
       - name: update
         run: |
           sudo apt-get -y update

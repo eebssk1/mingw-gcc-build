@@ -6,6 +6,12 @@ checkreturn(){
   fi
 }
 
+if [ "x$(which ccache)" != "x" ]; then
+ccache -o compression_level=3
+ccache -o limit_multiple=0.7
+ccache -o sloppiness=random_seed
+fi
+
 git clone https://github.com/eebssk1/m_gcc; checkreturn $?
 git clone https://github.com/eebssk1/m_binutils; checkreturn $?
 
