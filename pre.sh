@@ -12,8 +12,8 @@ ccache -o limit_multiple=0.7
 ccache -o sloppiness=random_seed
 fi
 
-git clone https://github.com/eebssk1/m_gcc; checkreturn $?
-git clone https://github.com/eebssk1/m_binutils; checkreturn $?
+git clone --single-branch  https://github.com/eebssk1/m_gcc; checkreturn $?
+git clone --single-branch https://github.com/eebssk1/m_binutils; checkreturn $?
 
 wget "https://github.com/eebssk1/mingw-crt-build/releases/download/5c897cf5/mingw-crt.tgz"
 tar -xf mingw-crt.tgz
