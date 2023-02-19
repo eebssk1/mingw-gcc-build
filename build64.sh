@@ -35,7 +35,7 @@ cd m_gcc/build
 export lt_cv_deplibs_check_method='pass_all'
 
 export CPPFLAGS_FOR_TARGET="-DWIN32_LEAN_AND_MEAN -DCOM_NO_WINDOWS_H"
-export CFLAGS_FOR_TARGET="-fno-stack-protector -ffunction-sections -fdata-sections $(cat $SDIR/f.txt)"
+export CFLAGS_FOR_TARGET="-fno-stack-protector $(cat $SDIR/f.txt)"
 export CXXFLAGS_FOR_TARGET="-fdeclone-ctor-dtor $CFLAGS_FOR_TARGET"
 
 ../configure --prefix=$SDIR/x86_64-w64-mingw32 --with-local-prefix=$SDIR/x86_64-w64-mingw32/local --target=x86_64-w64-mingw32 --enable-checking=release --with-arch=haswell --with-tune=skylake --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-multilib --disable-rpath --enable-nls --disable-werror --disable-symvers --disable-libstdcxx-debug --with-languages=c,c++,lto; checkreturn $?
