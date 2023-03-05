@@ -24,7 +24,7 @@ cd m_binutils/build
 
 ../configure --target=i686-w64-mingw32 --prefix=$SDIR/i686-w64-mingw32 --enable-nls --disable-rpath --disable-multilib --enable-install-libiberty --enable-plugins --enable-deterministic-archives --disable-werror --enable-lto --disable-gdb --disable-gprof; checkreturn $?
 
-make -j3 all; checkreturn $?
+make -j2 all; checkreturn $?
 make install
 
 rm -rf * .*
@@ -42,7 +42,7 @@ export CFLAGS_FOR_TARGET="-Wl,--large-address-aware -fno-stack-protector $(cat $
 export CXXFLAGS_FOR_TARGET="-fdeclone-ctor-dtor $CFLAGS_FOR_TARGET"
 
 ../configure --prefix=$SDIR/i686-w64-mingw32 --with-local-prefix=$SDIR/i686-w64-mingw32/local --target=i686-w64-mingw32 --enable-checking=release --with-arch=prescott --with-tune=skylake --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-multilib --disable-rpath --enable-nls --disable-werror --disable-symvers --disable-libstdcxx-debug --disable-sjlj-exceptions --with-dwarf2 --with-languages=c,c++,lto; checkreturn $?
-make -j3 all; checkreturn $?
+make -j2 all; checkreturn $?
 make install
 
 rm -rf * .* || true
