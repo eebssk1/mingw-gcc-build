@@ -17,8 +17,8 @@ export SDIR=$PWD
 
 export PATH=$SDIR/x86_64-w64-mingw32/bin:$PATH
 
-export CFLAGS_FOR_BUILD="$(cat $SDIR/ff.txt)"
-export CXXFLAGS_FOR_BUILD="-fdeclone-ctor-dtor $CFLAGS_FOR_BUILD"
+export CFLAGS="$(cat $SDIR/ff.txt)"
+export CXXFLAGS="-fdeclone-ctor-dtor $CFLAGS"
 
 cd m_binutils/build
 
