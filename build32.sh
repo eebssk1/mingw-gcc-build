@@ -17,6 +17,9 @@ export SDIR=$PWD
 
 export PATH=$SDIR/i686-w64-mingw32/bin:$PATH
 
+export CFLAGS_FOR_BUILD="$(cat $SDIR/ff.txt)"
+export CXXFLAGS_FOR_BUILD="-fdeclone-ctor-dtor $CFLAGS_FOR_BUILD"
+
 cd m_binutils/build
 
 ../configure --target=i686-w64-mingw32 --prefix=$SDIR/i686-w64-mingw32 --enable-nls --disable-rpath --disable-multilib --enable-install-libiberty --enable-plugins --enable-deterministic-archives --disable-werror --enable-lto --disable-gdb --disable-gprof; checkreturn $?
