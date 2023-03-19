@@ -41,7 +41,7 @@ export CPPFLAGS_FOR_TARGET="-DWIN32_LEAN_AND_MEAN -DCOM_NO_WINDOWS_H"
 export CFLAGS_FOR_TARGET="-Wl,--large-address-aware -fno-stack-protector $(cat $SDIR/f.txt)"
 export CXXFLAGS_FOR_TARGET="-fdeclone-ctor-dtor $CFLAGS_FOR_TARGET"
 
-../configure --prefix=$SDIR/i686-w64-mingw32 --with-local-prefix=$SDIR/i686-w64-mingw32/local --target=i686-w64-mingw32 --enable-checking=release --with-arch=prescott --with-tune=skylake --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-multilib --disable-rpath --enable-nls --disable-werror --disable-symvers --disable-libstdcxx-debug --disable-sjlj-exceptions --with-dwarf2 --with-languages=c,c++,lto; checkreturn $?
+../configure --prefix=$SDIR/i686-w64-mingw32 --with-local-prefix=$SDIR/i686-w64-mingw32/local --target=i686-w64-mingw32 --enable-checking=release --with-arch=prescott --with-tune=skylake --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-multilib --disable-rpath --enable-nls --disable-werror --disable-symvers --disable-libstdcxx-debug --disable-sjlj-exceptions --with-dwarf2 --enable-languages=c,c++,lto; checkreturn $?
 make -j2 all; checkreturn $?
 make install
 
