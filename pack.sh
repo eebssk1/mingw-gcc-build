@@ -2,7 +2,7 @@
 
 mkdir mingw-gcc
 
-cp -a ./x86_64-w64-mingw32 ./i686-w64-mingw32 ./mingw-gcc/
+cp -a ./x86_64-w64-mingw32* ./i686-w64-mingw32 ./mingw-gcc/
 
 cat rev > mingw-gcc/infs.txt
 cat tag >> mingw-gcc/infs.txt

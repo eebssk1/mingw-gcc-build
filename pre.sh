@@ -1,7 +1,7 @@
 #!/bin/sh
 
 checkreturn(){
-  if [ x$1 != x0 ]; then
+  if [ $1 -ne 0 ]; then
     exit $1
   fi
 }
@@ -12,10 +12,10 @@ ccache -o limit_multiple=0.7
 ccache -o sloppiness=random_seed
 fi
 
-git clone --single-branch  https://github.com/eebssk1/m_gcc; checkreturn $?
+git clone --single-branch https://github.com/eebssk1/m_gcc; checkreturn $?
 git clone --single-branch https://github.com/eebssk1/m_binutils; checkreturn $?
 
-wget "https://github.com/eebssk1/mingw-crt-build/releases/download/2e525878/mingw-crt.tgz"
+wget "https://github.com/eebssk1/mingw-crt-build/releases/download/af35c795/mingw-crt.tgz"
 tar -xf mingw-crt.tgz
 rm -rf mingw-crt.tgz
 

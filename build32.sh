@@ -1,7 +1,7 @@
 #!/bin/sh
 
 checkreturn(){
-  if [ x$1 != x0 ]; then
+  if [ $1 -ne 0 ]; then
     exit $1
   fi
 }
@@ -22,7 +22,7 @@ export CXXFLAGS="-fdeclone-ctor-dtor $CFLAGS"
 
 cd m_binutils/build
 
-../configure --target=i686-w64-mingw32 --prefix=$SDIR/i686-w64-mingw32 --enable-nls --disable-rpath --disable-multilib --enable-install-libiberty --enable-plugins --enable-deterministic-archives --disable-werror --enable-lto --disable-gdb --disable-gprof; checkreturn $?
+../configure --target=i686-w64-mingw32 --prefix=$SDIR/i686-w64-mingw32 --enable-nls --disable-rpath --disable-multilib --enable-install-libiberty --enable-plugins --enable-deterministic-archives --disable-werror --enable-lto --disable-gdb --disable-gprof --without-gdb --without-gprof; checkreturn $?
 
 make -j2 all; checkreturn $?
 make install
