@@ -15,7 +15,7 @@ fi
 git clone --single-branch https://github.com/eebssk1/m_gcc; checkreturn $?
 git clone --single-branch https://github.com/eebssk1/m_binutils; checkreturn $?
 
-wget "https://github.com/eebssk1/mingw-crt-build/releases/download/0e352269/mingw-crt.tgz"
+wget "https://github.com/eebssk1/mingw-crt-build/releases/download/016733a6/mingw-crt.tgz"
 tar -xf mingw-crt.tgz
 rm -rf mingw-crt.tgz
 
